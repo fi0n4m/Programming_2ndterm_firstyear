@@ -1,0 +1,28 @@
+import java.util.Random; 
+public class RollDice { 
+public static void main(String[] args) { 
+diceRolling(); 
+} 
+public static void diceRolling(){ 
+Random rand = new Random(); 
+int dice1 = rand.nextInt(6) + 1; 
+int dice2 = rand.nextInt(6) + 1; 
+int result = dice1 + dice2; 
+testDice(result); 
+} 
+public static void testDice(int roll){ 
+if(roll >= 2 && roll <= 6) { 
+System.out.println("Rolled: " + roll); 
+System.out.println("You lose!"); 
+} 
+else if (roll == 7) { 
+System.out.println("Rolled: " + roll); 
+System.out.println("You win!"); 
+} 
+else { 
+System.out.println("Rolled: " + roll); 
+System.out.println("Roll again!"); 
+diceRolling(); 
+} 
+} 
+}
